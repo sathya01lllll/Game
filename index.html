@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game SATHYA STORE</title>
+    <title>Game Profesional</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Game SATHYA STORE</h1>
+    <header>
+        <h1>Game Profesional</h1>
     </header>
-    
-    <main class="game-container">
-        <canvas id="gameCanvas"></canvas>
-        <button id="startGame">Mulai Game</button>
+
+    <main>
+        <section class="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-controls">
+                <button id="startGame">Mulai Game</button>
+                <button id="pauseGame">Jeda Game</button>
+                <button id="resumeGame">Lanjutkan Game</button>
+            </div>
+        </section>
     </main>
-    
-    <script src="game.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Game Profesional. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
