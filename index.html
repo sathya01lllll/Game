@@ -3,29 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Profesional</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Cek Kodam</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu {
+            margin-bottom: 20px;
+        }
+        .menu button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .menu button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .result h2 {
+            margin: 0;
+        }
+        .animation {
+            font-size: 1.5em;
+            color: #28a745;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Game Profesional</h1>
+
+    <header class="header">
+        <h1>Cek Kodam</h1>
     </header>
 
-    <main>
-        <section class="game-container">
-            <canvas id="gameCanvas"></canvas>
-            <div class="game-controls">
-                <button id="startGame">Mulai Game</button>
-                <button id="pauseGame">Jeda Game</button>
-                <button id="resumeGame">Lanjutkan Game</button>
-            </div>
+    <div class="container">
+        <section class="menu">
+            <button onclick="checkKodam()">Cek Kodam</button>
+            <button onclick="checkStrength()">Cek Kekuatan</button>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 Game Profesional. Semua hak cipta dilindungi.</p>
-    </footer>
+        <section class="result" id="resultSection">
+            <div id="animation" class="animation" style="display: none;">🗿</div>
+            <h2 id="resultTitle"></h2>
+            <p id="resultContent"></p>
+        </section>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        const kodamList = [
+            'Kodam Poltergeist', 'Wraith', 'Specter', 'Phantom', 'Banshee', 
+            'Ghost', 'Vampire', 'Ghoul', 'Zombie', 'Doppelgänger',
+            'Pocong', 'Kuntilanak', 'Leak', 'Genderuwo', 'Jelangkung',
+            'Sundel Bolong', 'Kuyang', 'Tuyul'
+        ];
+
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function checkKodam() {
+            const kodam = getRandomItem(kodamList);
+            document.getElementById('resultTitle').innerText = 'Kodam Anda:';
+            document.getElementById('resultContent').innerText = kodam;
+            document.getElementById('animation').style.display = 'block';
+        }
+
+        function checkStrength() {
+            const strength = Math.floor(Math.random() * 101); // Random strength between 0 and 100
+            document.getElementById('resultTitle').innerText = 'Kekuatan Kodam:';
+            document.getElementById('resultContent').innerText = `Kekuatan: ${strength}%`;
+            document.getElementById('animation').style.display = 'block';
+        }
+    </script>
+
 </body>
 </html>
