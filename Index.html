@@ -1,104 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SATHYA STORE Online Game</title>
+    <title>Game SATHYA STORE</title>
     <style>
-        {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        
-        body {
+            background-color: #f0f0f0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            background: linear-gradient(to bottom right, #2c3e50, #bdc3c7);
-            color: #ecf0f1;
+            color: #333;
+        }
+        .container {
             text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 300px;
+            background-color: #fff;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        #clickerButton {
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        button {
             padding: 10px 20px;
-            font-size: 1.2em;
-            color: #ecf0f1;
-            background-color: #e74c3c;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
-
-        #clickerButton:hover {
-            background-color: #c0392b;
+        button:hover {
+            background-color: #0056b3;
         }
-
-        #score {
+        .message {
             margin-top: 20px;
-            font-size: 1.5em;
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #95a5a6;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-
-    <h1>Welcome to SATHYA STORE</h1>
-    <div class="game-container">
-        <button id="clickerButton">Click Me!</button>
-        <div id="score">Score: 0</div>
+    <div class="container">
+        <h1>Game Tebak Angka</h1>
+        <div class="instructions">
+            <p>Masukkan angka antara 1 dan 10 dan klik "Tebak".</p>
+            <input type="number" id="guess" min="1" max="10">
+            <button onclick="checkGuess()">Tebak</button>
+        </div>
+        <div class="message" id="message"></div>
     </div>
 
-    <footer>
-        <p>Apk SATHYA store: <a href="mailto:https://sathyastore.olshopku.com">https://sathyastore.olshopku.com</a></p>
-        <p>© 2024 SATHYA STORE. All rights reserved.</p>
-    </footer>
-
     <script>
-        let score = 0;
-        const clickerButton = document.getElementById('clickerButton');
-        const scoreDisplay = document.getElementById('score');
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
 
-        clickerButton.addEventListener('click', () => {
-            score++;
-            scoreDisplay.textContent = 'Score: ' + score;
-        });
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guess').value);
+            const messageElement = document.getElementById('message');
+            
+            if (isNaN(guess) || guess < 1 || guess > 10) {
+                messageElement.textContent = 'Masukkan angka yang valid antara 1 dan 10.';
+                messageElement.style.color = 'red';
+            } else if (guess === randomNumber) {
+                messageElement.textContent = 'Selamat! Anda benar!';
+                messageElement.style.color = 'green';
+            } else {
+                messageElement.textContent = `Salah! Angka yang benar adalah ${randomNumber}.`;
+                messageElement.style.color = 'red';
+            }
+        }
     </script>
-
 </body>
 </html>
