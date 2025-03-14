@@ -3,116 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cek Kodam</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            overflow-x: hidden;
-        }
-        .header {
-            background-color: #222;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .menu {
-            margin-bottom: 20px;
-        }
-        .menu button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            margin: 0 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .menu button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            background: #e9ecef;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .result h2 {
-            margin: 0;
-        }
-        .animation {
-            font-size: 1.5em;
-            color: #28a745;
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-    </style>
+    <title>JINOM - Internet Super Cepat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <header class="header">
-        <h1>Cek Kodam</h1>
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="https://img12.pixhost.to/images/849/575065502_vinnkece.jpg" alt="JINOM Logo" class="h-16">
+            <a href="https://wa.me/6285811457384" class="bg-teal-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-teal-600">
+                <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+        </div>
     </header>
 
-    <div class="container">
-        <section class="menu">
-            <button onclick="checkKodam()">Cek Kodam</button>
-            <button onclick="checkStrength()">Cek Kekuatan</button>
-        </section>
+    <!-- Hero Section -->
+    <section class="text-center py-24 bg-teal-500 text-white">
+        <h1 class="text-4xl font-bold">🚀 INTERNET SUPER CEPAT & STABIL! ⚡</h1>
+        <p class="mt-3 text-lg">Unlimited & Stabil Hingga 100 Mbps. Harga mulai Rp200.000/bulan!</p>
+        <a href="https://wa.me/6285811457384" class="mt-6 inline-block bg-white text-teal-500 px-6 py-3 rounded-lg font-bold shadow hover:bg-gray-100">
+            Langganan Sekarang!
+        </a>
+    </section>
 
-        <section class="result" id="resultSection">
-            <div id="animation" class="animation" style="display: none;">🗿</div>
-            <h2 id="resultTitle"></h2>
-            <p id="resultContent"></p>
-        </section>
+    <!-- Paket Internet -->
+    <div class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center mb-10">📢 PILIH PAKET FAVORITMU</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Paket Family -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition">
+                <img src="https://img12.pixhost.to/images/850/575077374_vinnkece.jpg" alt="Paket Family" class="w-full h-400 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Paket Family</h3>
+                <p class="text-gray-600">55 Mbps - Ideal untuk keluarga.</p>
+                <p class="text-2xl font-bold text-teal-500">Rp 200.000/Bulan</p>
+                <a href="https://wa.me/6285811457384"
+                   class="block bg-teal-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-teal-600">Langganan Sekarang</a>
+            </div>
+
+            <!-- Paket Home -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition">
+                <img src="https://img12.pixhost.to/images/850/575083555_vinnkece.jpg" alt="Paket Home" class="w-full h-400 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Paket Home</h3>
+                <p class="text-gray-600">65 Mbps - Streaming dan gaming lancar.</p>
+                <p class="text-2xl font-bold text-teal-500">Rp 250.000/Bulan</p>
+                <a href="https://wa.me/6285811457384"
+                   class="block bg-teal-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-teal-600">Langganan Sekarang</a>
+            </div>
+
+            <!-- Paket Silver -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition">
+                <img src="https://img12.pixhost.to/images/918/576047126_vinnkece.jpg" alt="Paket Silver" class="w-full h-400 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Paket Silver</h3>
+                <p class="text-gray-600">75 Mbps - Bebas hambatan streaming 4K.</p>
+                <p class="text-2xl font-bold text-teal-500">Rp 350.000/Bulan</p>
+                <a href="https://wa.me/6285811457384"
+                   class="block bg-teal-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-teal-600">Langganan Sekarang</a>
+            </div>
+
+            <!-- Paket Gold -->
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition">
+                <img src="https://img12.pixhost.to/images/918/576047339_vinnkece.jpg" alt="Paket Gold" class="w-full h-400 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Paket Gold</h3>
+                <p class="text-gray-600">100 Mbps - Performa terbaik.</p>
+                <p class="text-2xl font-bold text-teal-500">Rp 750.000/Bulan</p>
+                <a href="https://wa.me/6285811457384"
+                   class="block bg-teal-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-teal-600">Langganan Sekarang</a>
+            </div>
+
+        </div>
     </div>
 
-    <script>
-        const kodamList = [
-            'Kodam Poltergeist', 'Wraith', 'Specter', 'Phantom', 'Banshee', 
-            'Ghost', 'Vampire', 'Ghoul', 'Zombie', 'Doppelgänger',
-            'Pocong', 'Kuntilanak', 'Leak', 'Genderuwo', 'Jelangkung',
-            'Sundel Bolong', 'Kuyang', 'Tuyul'
-        ];
+    <!-- Keunggulan -->
+    <section class="bg-gray-200 py-12">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-6">Kenapa Pilih JINOM?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-white shadow rounded-lg">
+                    <i class="fas fa-wifi text-teal-500 text-4xl"></i>
+                    <p class="mt-4 font-bold">Kecepatan hingga 100 Mbps ⚡</p>
+                </div>
+                <div class="p-4 bg-white shadow rounded-lg">
+                    <i class="fas fa-gamepad text-teal-500 text-4xl"></i>
+                    <p class="mt-4 font-bold">Streaming & gaming tanpa lag 🎮📺</p>
+                </div>
+                <div class="p-4 bg-white shadow rounded-lg">
+                    <i class="fas fa-headset text-teal-500 text-4xl"></i>
+                    <p class="mt-4 font-bold">Layanan pelanggan 24/7 🤝</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function getRandomItem(arr) {
-            return arr[Math.floor(Math.random() * arr.length)];
-        }
-
-        function checkKodam() {
-            const kodam = getRandomItem(kodamList);
-            document.getElementById('resultTitle').innerText = 'Kodam Anda:';
-            document.getElementById('resultContent').innerText = kodam;
-            document.getElementById('animation').style.display = 'block';
-        }
-
-        function checkStrength() {
-            const strength = Math.floor(Math.random() * 101); // Random strength between 0 and 100
-            document.getElementById('resultTitle').innerText = 'Kekuatan Kodam:';
-            document.getElementById('resultContent').innerText = `Kekuatan: ${strength}%`;
-            document.getElementById('animation').style.display = 'block';
-        }
-    </script>
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-gray-800 text-white">
+        <p>📲 WA: <a href="https://wa.me/6285811457384" class="text-teal-400 font-bold">0858-1145-7384</a></p>
+        <p class="text-sm mt-2">#InternetSemetonBali #Internetulibanjara #InternetdariTetangga</p>
+    </footer>
 
 </body>
 </html>
